@@ -15,7 +15,7 @@ service:
                 spec:
                   connectorRef: mygithubconnector
                   gitFetchType: Branch
-                  folderPath: charts/sample-app/Chart.yaml
+                  folderPath: charts/sample-app/
                   repoName: ServiceOverride
                   branch: main
               subChartPath: ""
