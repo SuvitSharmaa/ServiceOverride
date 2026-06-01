@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: infraServOverrride
+  identifier: infraServOverrride
+  orgIdentifier: default
+  projectIdentifier: p1
+  environmentRef: ProdSrvOverride
+  deploymentType: NativeHelm
+  type: KubernetesDirect
+  spec:
+    connectorRef: k8sclusterconnector
+    namespace: default
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
