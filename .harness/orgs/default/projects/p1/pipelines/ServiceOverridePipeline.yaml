@@ -15,10 +15,11 @@ pipeline:
           service:
             serviceRef: ServiceOverrideCheck
           environment:
-            environmentRef: ServiceOverride
+            environmentRef: servOverride2
+            gitBranch: main
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: ServiceOverrideInfra
+              - identifier: infraServiceOverride
           execution:
             steps:
               - step:
