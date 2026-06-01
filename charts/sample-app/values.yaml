@@ -1,0 +1,27 @@
+# Default values — override in Harness via Service / Environment Values YAML
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: "1.25"
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+# Harness-friendly override surface (e.g. env-specific labels or config)
+app:
+  env: dev
+  message: "Hello from sample-app"
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 50m
+  #   memory: 64Mi

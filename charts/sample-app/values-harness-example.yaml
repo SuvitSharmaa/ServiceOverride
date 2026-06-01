@@ -1,0 +1,8 @@
+# Example Harness Values YAML override (paste into Service or Environment config)
+# Merge order: chart values.yaml -> service override -> environment override
+replicaCount: 2
+app:
+  env: staging
+  message: "Overridden by Harness"
+image:
+  tag: "1.26"
