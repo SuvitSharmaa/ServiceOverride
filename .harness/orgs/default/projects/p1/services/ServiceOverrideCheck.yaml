@@ -3,3 +3,41 @@ service:
   identifier: ServiceOverrideCheck
   orgIdentifier: default
   projectIdentifier: p1
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: ServiceOverrideHelmCheckManifest
+            type: HelmChart
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: mygithubconnector
+                  gitFetchType: Branch
+                  folderPath: charts/sample-app/
+                  repoName: ServiceOverride
+                  branch: main
+              subChartPath: ""
+              valuesPaths:
+                - charts/sample-app/values.yaml
+              optionalValuesYaml: false
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              helmVersion: V2
+              fetchHelmChartMetadata: false
+        - manifest:
+            identifier: OverrideFileManifest
+            type: Values
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: mygithubconnector
+                  gitFetchType: Branch
+                  paths:
+                    - charts/sample-app/values-harness-example.yaml
+                  repoName: ServiceOverride
+                  branch: develop
+              optionalValuesYaml: false
+    type: NativeHelm
