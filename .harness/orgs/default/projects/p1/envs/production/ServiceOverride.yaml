@@ -1,0 +1,6 @@
+environment:
+  name: ServiceOverride
+  identifier: ServiceOverride
+  orgIdentifier: default
+  projectIdentifier: p1
+  type: Production
