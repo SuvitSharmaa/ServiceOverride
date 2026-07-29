@@ -6,6 +6,7 @@ pipeline:
   description: tags not updating when changed from the git in all pipelines view hover over tags
   tags:
     Intial_tag: Created from UI
+    Secondary_tag: Created from GIT
   stages:
     - stage:
         name: wait
