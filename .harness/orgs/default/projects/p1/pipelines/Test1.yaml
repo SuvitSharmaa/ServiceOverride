@@ -1,0 +1,30 @@
+pipeline:
+  name: Test1
+  identifier: Test1
+  projectIdentifier: p1
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: hsdfi
+        identifier: hsdfi
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "ABC"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
